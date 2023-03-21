@@ -11,7 +11,10 @@ difference()
 {
     rotate([ 90, 0, 0 ])
     {
+        // Synta bracket
         iso_trapazoid(short = 22.5, long = 32, length = base_length, height = base_height);
+
+        // Mounting arm
         translate([ 0, base_height, -(arm_length - base_length) ]) minkowski()
         {
             iso_trapazoid(short = 18.5, long = 20.5, length = arm_length - 1, height = 4);
@@ -19,8 +22,14 @@ difference()
         }
     }
 
-    screw_hole(0, 40, 6, 4, 4, 7);
-    screw_hole(0, 60, 6, 4, 4, 7);
+    // Screw holes should be separated by 20mm
+    offset = 40;
+    screw_size = 4;
+    head_depth = 4;
+    head_size = 7;
+
+    screw_hole(0, offset, 6, screw_size, head_depth, head_size);
+    screw_hole(0, offset + 20, 6, screw_size, head_depth, head_size);
 }
 
 // A counter-sunk screw hole
