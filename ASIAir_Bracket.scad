@@ -7,6 +7,13 @@ arm_length = 110;
 base_length = 40;
 base_height = 9;
 
+// Screw holes should be separated by 20mm
+offset = 40;
+screw_size = 4;
+screw_length = 6;
+head_depth = 4;
+head_size = 7;
+
 difference()
 {
     rotate([ 90, 0, 0 ])
@@ -22,14 +29,8 @@ difference()
         }
     }
 
-    // Screw holes should be separated by 20mm
-    offset = 40;
-    screw_size = 4;
-    head_depth = 4;
-    head_size = 7;
-
-    screw_hole(0, offset, 6, screw_size, head_depth, head_size);
-    screw_hole(0, offset + 20, 6, screw_size, head_depth, head_size);
+    screw_hole(0, offset, screw_length, screw_size, head_depth, head_size);
+    screw_hole(0, offset + 20, screw_length, screw_size, head_depth, head_size);
 }
 
 // A counter-sunk screw hole
