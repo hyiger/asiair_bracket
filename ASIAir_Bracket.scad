@@ -2,7 +2,7 @@
 
 include <parts.scad>
 
-// Arm that attached to the ASIAir
+// Arm that attaches to the ASIAir
 arm_length = 110;
 arm_thickness = 4;
 arm_text = "RedCat 71";
